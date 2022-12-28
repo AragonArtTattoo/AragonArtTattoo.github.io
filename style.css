@@ -104,18 +104,15 @@ header{
 main{
  background-color: blueviolet;    
  width: 100vw;
- min-height: 83%;
+ min-height: 100%;
  height: auto;
  background-image: linear-gradient(rgba(178, 179, 181, 0.75), rgba(178, 179, 181, 0.75)), url(./Recursos/Tallados/dragonGrande.jpg);
- background-size: cover;
+ background-size:cover;
  background-repeat: no-repeat;
  display:block;
  align-items:center;  
 }
-main.secciones{
-    display: flex;
-    align-items:center; 
-} 
+
 .cuadro{
     margin-top: 2em;
 }
@@ -204,7 +201,7 @@ main.secciones{
     color: black;
     padding: 2em;
     border-radius: 1em;
-    box-shadow: .2em .2em .2em;
+    /* box-shadow: .2em .2em .2em; */
     /* overflow: hidden; */
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
@@ -410,7 +407,7 @@ footer h2{
         width: calc(100% / 2 -2em);
     }
 
-    .carrousel .dos{
+    .carrousel .uno{
         display: none;
     }
     #contInterno img{
