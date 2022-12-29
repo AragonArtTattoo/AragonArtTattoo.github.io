@@ -16,23 +16,16 @@ var mediaQuery1 = window.matchMedia("(min-width: 600px)");
 var mediaQuery2 = window.matchMedia("(min-width: 900px)");
 
 
-
 punto.forEach((cadaPunto , p) => {
     punto[p].addEventListener('click', ()=>{
         
         let posicion = p;
         let operacion;
         if (mediaQuery2.matches){
-            operacion = posicion * -50;
-            console.log('hizo la dos puntos');
+            operacion = posicion * -50;            
         }else if (mediaQuery1.matches) {  
             operacion = posicion * -25;
-            console.log('hizo la cuatro puntos');
-        } else {
-            /* operacion = posicion * - 16.6; */
-            operacion = posicion * 0;
-            console.log('hizo la seis puntos');
-        }
+        } 
         
         grande.style.transform = `translateX(${operacion}%)`;
         
@@ -42,8 +35,6 @@ punto.forEach((cadaPunto , p) => {
         punto[p].classList.add('activo');   
     })
 })
-
-
 
 /*-------------------------------------------------------------------*/
 /*------Galerias-----------------------------------------------------*/
