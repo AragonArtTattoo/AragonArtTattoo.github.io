@@ -9,18 +9,19 @@
     padding: 0;
     font-family: aragon;
 } 
-body{
-    height: 100vh;
-}
-h2{
-    color: white;
+
+#titulo{
     font-size: .75em;
+    position: absolute;    
+    left: 40%;
+    color: white;
 }
+
 .btn {
     font-family: 'Times New Roman', Times, serif;
     font-size: 2em;
-    width: 2rem;
-    height: 2rem;
+    width: 1em;
+    height: 1em;
     outline: 0px solid  transparent;
     border-radius: 12%;
     display: flex;
@@ -31,36 +32,34 @@ h2{
 .btn:hover{
     font-size: 2.1em;
 }
-nav{
+nav{ 
     
     background-color:black;
     width: 100%;
-    height: 2.5rem;
-    padding-right: 0.5rem;
-    top: 0;
+    height: 4vh;
+    /* padding-right: 0.5rem; */
+    /* top: 0; */
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     flex-wrap: wrap;
-    align-items:center;
-    
-    
-    
+    align-items:center; 
 }
 .menu{
     list-style: none;
     width: 100%;
-    padding: 0;
-    max-height: 0;
-    overflow: hidden;
-    z-index: 5;
-    background-color: rgba(255, 255, 255, 0.576);
-    
+    margin: 2%; 
+    /*overflow: hidden; */
+    display: none;
+    background-color: rgba(255, 255, 255, 0.712);
+    z-index: 9;
 }
 .menu.active{
-    max-height: 635px;   
+    max-height: 635px; 
+    display: block;  
 }
 nav a{
-    border-bottom: 2px solid rgba(255, 255, 255, 0.576);
+    /* z-index: 99; */
+    border-bottom: rgba(0, 0, 0, 0.33) solid .15em;
     text-decoration: none;
     color: black;
     padding: 1em;
@@ -68,49 +67,60 @@ nav a{
     font-size: 1.25em;
     display: block;
     
+    
 } 
+.navLogo{
+    border-bottom: none   
+}
 nav a:hover{
     color: rgb(206, 4, 4);
     
 }
 header{
+    position: sticky;   
+    top: 0;
     background-color: black;
     width: 100%;
-    height: 3rem;
-    text-align: end;
-    font-size: .75em;
-    padding-right: 1em;
-    padding-top: 1.25em;
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.576);
-    
+    height: 3em;  
+    z-index: 99;  
 }
 #flex { 
     display: flex; 
     justify-content:space-between;
-    width: 100%;}
-#logo{
-    width: 15em;
-    height: 18em;
-    padding: -10%;
+    /* text-align: center; */
+    align-items: center;
+    /* width: 100%; */}
+.logo{
+    width: 10em;
+    height: 10em;
     position: absolute;
-    top: -3em;    
+    top: -3em; 
+    left: -2em;   
     z-index: 99;
 }
-
-
 main{
  background-color: blueviolet;    
- width: 100vw;
- min-height: 100%;
+ width: 100%;
+ min-height: 90vh;
  height: 100%;
  background-image: linear-gradient(rgba(178, 179, 181, 0.75), rgba(178, 179, 181, 0.75)), url(./Recursos/Tallados/dragonGrande.jpg);
  background-size:cover;
  background-repeat: no-repeat;
  display:block;
  align-items:center;  
+}
+.secciones{
+    display: flex;
+}
+.cuadro{
+    height: 90%; 
+    margin-top: 2em;
+   
+}
+.cuadro h1{
+    font-size: 1.5em;
+    margin-left: 40%;
+    margin-top: -.75em;
 }
 
 /*-------------------------------------------------------------------*/
@@ -181,7 +191,7 @@ main{
 /*-------------------------------------------------------------------*/
 #carrousel{
     width: 100%;
-    height: auto;
+    height: 100%;
     display: flex;
     flex-flow: row nowrap;
     justify-content: center;
@@ -194,8 +204,6 @@ main{
     color: black;
     padding: 2em;
     border-radius: 1em;
-    /* box-shadow: .2em .2em .2em; */
-    /* overflow: hidden; */
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     
@@ -242,10 +250,10 @@ main{
     background-size:cover;
 }
 #redes{
+    /* position:sticky; */
     background-color: rgba(255, 255, 255, 0);
-    /* padding: 1.5em; */
-    margin: 1.5em;
-    /* width: 90vw; */
+   /*  padding: 1em; */
+    width: 100%;
     /* height: 10%; */
     display: flex;    
     flex-flow: row nowrap;
@@ -271,14 +279,16 @@ main{
 }
 
 footer{
-    margin-top: auto;
+    position: sticky;
+    bottom: 0;
+    /* margin-top: auto; */
     background-color: black;
-    width: 100%;
-    height: 5%;
+    width:100% ;
+    height: 5vh;
     color: rgba(255, 255, 255, 0.689);
     font-size: 8px;
     text-align: center;
-    padding-top: 1em;
+    padding-top: 1em ;
 }
 footer h2{
     font-family: 'Times New Roman', Times, serif;
@@ -314,6 +324,7 @@ footer h2{
 
 
 @media screen and (min-width: 600px) {
+   
     nav .btn{
         display: none;
     }
@@ -322,25 +333,31 @@ footer h2{
         color: white;
         padding: .25em;
         text-align: center;
-        font-size: .75;
+        font-size: 1em;
         display: block;
         border-bottom: none;
     } 
-    nav h2{
+    
+    #titulo{
         display: none;
+    }
+    .logo{
+        width: 15em;
+        height: 15em;
+        z-index: 99;
     }
     
     .menu{
         background-color: black;
         display: flex; 
         justify-content: end;
-        max-height: 50px;
-        font-size: .75em;
-    }
-    header{
-        padding-top: 1em;
+        max-height: 100%;
         font-size: 1em;
-        border-bottom: none;
+        width: 100%;
+    }
+
+    .cuadro h1{
+        font-size: 2em;
     }
     
     .carrousel .grande{
@@ -359,9 +376,6 @@ footer h2{
         list-style: none;   
         box-shadow: 1em 1em 2em;    
     }
-    /* .carrousel .uno{
-        display: none
-    } */
     
     #gridGallery img:nth-child(2n){
         grid-column: span 2;
@@ -371,13 +385,8 @@ footer h2{
         display: flex;
         align-items:center;  
     } 
-    .cuadro{
-        margin-top: 5em;
-    }
-    .cuadro h1{
-        display: block;
-        margin-left: 1em;
-    }
+
+
     
     #contInterno{
         border-radius: solid 2px #f3f3f3;
